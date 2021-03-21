@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class SessionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     @IBAction func LossNumberTextEditing(_ sender: Any) {
         let num: Int? = Int(LossNumberTextOutlet.text ?? "")
         if num == nil && LossNumberTextOutlet.text != ""{
-            LossNumberTextOutlet.text = "5"
+            LossNumberTextOutlet.text = "2"
         }
     }
     @IBAction func PlayNumberTextEditing(_ sender: Any) {
