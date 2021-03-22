@@ -9,6 +9,8 @@ import UIKit
 
 
 class SessionViewController: UIViewController {
+    // passed in
+    var template: GameSessionTemplate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

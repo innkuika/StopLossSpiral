@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import UIKit
+
+class NewSessionViewController: UIViewController {
+
+    override func viewDidLoad() {
+        
+    }
+    
+}

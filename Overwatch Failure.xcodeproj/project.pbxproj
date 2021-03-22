@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491963C5260802E3003AE531 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491963C4260802E3003AE531 /* HomeViewController.swift */; };
+		491963C8260803EE003AE531 /* NewSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491963C7260803EE003AE531 /* NewSessionViewController.swift */; };
+		491963CC260804AA003AE531 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491963CB260804AA003AE531 /* util.swift */; };
 		49DA749725B43CA700151744 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA749625B43CA700151744 /* AppDelegate.swift */; };
 		49DA749925B43CA700151744 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA749825B43CA700151744 /* SceneDelegate.swift */; };
-		49DA749B25B43CA700151744 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA749A25B43CA700151744 /* ViewController.swift */; };
+		49DA749B25B43CA700151744 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA749A25B43CA700151744 /* SessionViewController.swift */; };
 		49DA749E25B43CA700151744 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DA749C25B43CA700151744 /* Main.storyboard */; };
 		49DA74A025B43CA900151744 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA749F25B43CA900151744 /* Assets.xcassets */; };
 		49DA74A325B43CA900151744 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DA74A125B43CA900151744 /* LaunchScreen.storyboard */; };
@@ -17,10 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		491963C4260802E3003AE531 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		491963C7260803EE003AE531 /* NewSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSessionViewController.swift; sourceTree = "<group>"; };
+		491963CB260804AA003AE531 /* util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
 		49DA749325B43CA700151744 /* Overwatch Failure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overwatch Failure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DA749625B43CA700151744 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49DA749825B43CA700151744 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		49DA749A25B43CA700151744 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49DA749A25B43CA700151744 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		49DA749D25B43CA700151744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49DA749F25B43CA900151744 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DA74A225B43CA900151744 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +45,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491963C22608022B003AE531 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				49DA74B025B4C72300151744 /* StopViewControlloer.swift */,
+				49DA749A25B43CA700151744 /* SessionViewController.swift */,
+				491963C4260802E3003AE531 /* HomeViewController.swift */,
+				491963C7260803EE003AE531 /* NewSessionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		49DA748A25B43CA700151744 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +75,11 @@
 		49DA749525B43CA700151744 /* Overwatch Failure */ = {
 			isa = PBXGroup;
 			children = (
+				491963CB260804AA003AE531 /* util.swift */,
+				491963C22608022B003AE531 /* ViewControllers */,
 				49DA749625B43CA700151744 /* AppDelegate.swift */,
 				49DA749825B43CA700151744 /* SceneDelegate.swift */,
-				49DA749A25B43CA700151744 /* ViewController.swift */,
 				49DA749C25B43CA700151744 /* Main.storyboard */,
-				49DA74B025B4C72300151744 /* StopViewControlloer.swift */,
 				49DA749F25B43CA900151744 /* Assets.xcassets */,
 				49DA74A125B43CA900151744 /* LaunchScreen.storyboard */,
 				49DA74A425B43CA900151744 /* Info.plist */,
@@ -140,8 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491963CC260804AA003AE531 /* util.swift in Sources */,
+				491963C8260803EE003AE531 /* NewSessionViewController.swift in Sources */,
+				491963C5260802E3003AE531 /* HomeViewController.swift in Sources */,
 				49DA74B125B4C72300151744 /* StopViewControlloer.swift in Sources */,
-				49DA749B25B43CA700151744 /* ViewController.swift in Sources */,
+				49DA749B25B43CA700151744 /* SessionViewController.swift in Sources */,
 				49DA749725B43CA700151744 /* AppDelegate.swift in Sources */,
 				49DA749925B43CA700151744 /* SceneDelegate.swift in Sources */,
 			);
