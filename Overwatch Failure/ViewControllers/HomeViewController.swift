@@ -29,13 +29,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         templateTableViewOutlet.dataSource = self
         templateTableViewOutlet.delegate = self
         
-        let template = GameSessionTemplate(name: "OW", totalMatch: 0, lossInRow: 9)
-        let templates = GameSessionTemplates(templates: [template, template])
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(templates) {
-            let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
-        }
+//        let template = GameSessionTemplate(name: "OW", totalMatch: 0, lossInRow: 9)
+//        let template2 = GameSessionTemplate(name: "LOL", totalMatch: 0, lossInRow: 9)
+//        let templates = GameSessionTemplates(templates: [template, template2])
+//        let encoder = JSONEncoder()
+//        if let encoded = try? encoder.encode(templates) {
+//            let defaults = UserDefaults.standard
+//            defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
+//        }
         parseGameSessionTemplates()
     }
     
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let savedTemplates = defaults.object(forKey: defaultsKeys.GameSessionTemplatesKey) as? Data {
             let decoder = JSONDecoder()
             if let loadedTemplates = try? decoder.decode(GameSessionTemplates.self, from: savedTemplates) {
-                print(loadedTemplates.templates[0])
                 gameTemplates = loadedTemplates.templates
                 templateTableViewOutlet.reloadData()
             }
@@ -104,10 +104,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     
         if editingStyle == .delete {
-
             // remove the item from the data model
             gameTemplates.remove(at: indexPath.row/2)
 
+            // update user default
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(GameSessionTemplates(templates: gameTemplates)) {
+                let defaults = UserDefaults.standard
+                defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
+            }
+            
             // delete the table view row
             let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section);
             tableView.deleteRows(at: [indexPath, nextIndexPath], with: .fade)
