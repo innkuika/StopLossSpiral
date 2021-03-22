@@ -22,6 +22,7 @@ class templateCell: UITableViewCell{
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
+    @IBOutlet weak var startNewSessionButtonOutlet: UIButton!
     @IBOutlet weak var templateTableViewOutlet: UITableView!
     var gameTemplates: [GameSessionTemplate] = []
     
@@ -38,6 +39,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
 //        }
         parseGameSessionTemplates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        styleButton(button: startNewSessionButtonOutlet)
     }
     
     func parseGameSessionTemplates(){

@@ -308,6 +308,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Start with Templates" largeTitleDisplayMode="always" id="ULD-cc-jWb"/>
                     <connections>
+                        <outlet property="startNewSessionButtonOutlet" destination="KnO-b8-g54" id="pRB-sJ-wyd"/>
                         <outlet property="templateTableViewOutlet" destination="tD2-OZ-XnX" id="NJD-un-NbL"/>
                     </connections>
                 </viewController>

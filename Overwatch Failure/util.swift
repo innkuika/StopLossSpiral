@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct defaultsKeys {
     static let GameSessionTemplatesKey = "GameSessionTemplates"
@@ -21,3 +22,8 @@ struct GameSessionTemplates: Codable {
     var templates: [GameSessionTemplate]
 }
 
+func styleButton(button: UIButton){
+    button.layer.cornerRadius = 10
+    button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 25)
+    button.titleLabel?.textColor = UIColor.systemBackground
+}
