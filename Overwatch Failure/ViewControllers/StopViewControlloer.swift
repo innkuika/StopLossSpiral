@@ -15,6 +15,7 @@ class StopViewController: UIViewController {
     @IBOutlet weak var CreditTextOutlet: UITextView!
     
     override func viewDidLoad() {
+        navigationItem.hidesBackButton = true
         let attributedString = NSMutableAttributedString(string: "Web version of this app is available at \n https://overwatch.fail")
         attributedString.addAttribute(.link, value: "https://overwatch.fail", range: NSRange(location: 42, length: 22))
 

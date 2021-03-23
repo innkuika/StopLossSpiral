@@ -12,36 +12,36 @@ class SessionViewController: UIViewController {
     // passed in
     var template: GameSessionTemplate?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-
-
     @IBOutlet weak var LossNumberTextOutlet: UITextField!
     @IBOutlet weak var PlayNumberTextOutlet: UITextField!
     
     @IBOutlet weak var CurLossNumber: UILabel!
     @IBOutlet weak var CurPlayNumber: UILabel!
     
-    @IBAction func LossNumberTextEditing(_ sender: Any) {
-        let num: Int? = Int(LossNumberTextOutlet.text ?? "")
-        if num == nil && LossNumberTextOutlet.text != ""{
-            LossNumberTextOutlet.text = "2"
+    @IBOutlet weak var WinButtonOutlet: UIButton!
+    @IBOutlet weak var LossButtonOutlet: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+        LossNumberTextOutlet.isUserInteractionEnabled = false
+        PlayNumberTextOutlet.isUserInteractionEnabled = false
+        guard let template = template else {
+            assertionFailure("cannot find template")
+            return
         }
+        LossNumberTextOutlet.text = "\(template.lossInRow)"
+        PlayNumberTextOutlet.text = "\(template.totalMatch)"
+        navigationItem.title = template.name
+        
     }
-    @IBAction func PlayNumberTextEditing(_ sender: Any) {
-        let num: Int? = Int(PlayNumberTextOutlet.text ?? "")
-        if num == nil && PlayNumberTextOutlet.text != ""{
-            PlayNumberTextOutlet.text = "5"
-        }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        WinButtonOutlet.layer.cornerRadius = 20
+        LossButtonOutlet.layer.cornerRadius = 20
+
     }
+    
     
     @IBAction func LossButton(_ sender: Any) {
         let curLossNum = Int(CurLossNumber.text ?? "0") ?? 0

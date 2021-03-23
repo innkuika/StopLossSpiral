@@ -29,15 +29,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         templateTableViewOutlet.dataSource = self
         templateTableViewOutlet.delegate = self
+        navigationItem.hidesBackButton = true
         
-//        let template = GameSessionTemplate(name: "OW", totalMatch: 0, lossInRow: 9)
-//        let template2 = GameSessionTemplate(name: "LOL", totalMatch: 0, lossInRow: 9)
-//        let templates = GameSessionTemplates(templates: [template, template2])
-//        let encoder = JSONEncoder()
-//        if let encoded = try? encoder.encode(templates) {
-//            let defaults = UserDefaults.standard
-//            defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
-//        }
+        // set user default if not set yet
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: defaultsKeys.GameSessionTemplatesKey) == nil{
+            let encoder = JSONEncoder()
+            let template = GameSessionTemplate(name: "Overwatch", totalMatch: 5, lossInRow: 2)
+            if let encoded = try? encoder.encode(GameSessionTemplates(templates: [template])) {
+                defaults.set(encoded, forKey: defaultsKeys.GameSessionTemplatesKey)
+            }
+        }
+        
         parseGameSessionTemplates()
     }
     
