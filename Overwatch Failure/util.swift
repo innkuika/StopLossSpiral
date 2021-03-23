@@ -27,3 +27,5 @@ func styleButton(button: UIButton){
     button.titleLabel?.font =  UIFont.boldSystemFont(ofSize: 25)
     button.titleLabel?.textColor = UIColor.systemBackground
 }
+
+let myPurple = UIColor(red: 183/255, green: 196/255, blue: 253/255, alpha: 1.0)
